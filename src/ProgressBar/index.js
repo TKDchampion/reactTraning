@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useNumberHook from "../CustomerHook";
 // import { useEffect, useState } from "react";
 
@@ -23,11 +23,11 @@ const ProgressBar = () => {
   //   };
   // }, [value, percentage]);
 
-  const [percent, setTarget] = useNumberHook(50);
+  const [percent, setTarget, colorReducer] = useNumberHook(50);
 
   return (
     <div>
-      <div style={{ width: 500, height: 50, background: "#ddd" }}>
+      <div style={{ width: 500, height: 50, ...colorReducer }}>
         <div
           style={{
             width: `${percent}%`,
